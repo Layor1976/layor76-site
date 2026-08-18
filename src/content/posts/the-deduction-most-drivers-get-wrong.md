@@ -34,9 +34,24 @@ expenses — but only if the records exist to prove it.
 That's the actual rule: **the better method is whichever one you can actually document.** A
 theoretically-better deduction you can't back up with records is worth nothing in an audit.
 
+## What the standard mileage rate is actually worth
+
+For 2026, the IRS standard mileage rate is **72.5¢ per business mile** — and there's no cap on it.
+If the miles are legitimate business miles, all of them count, however many you drive:
+
+| Business miles/year | Deduction |
+|---|---:|
+| 10,000 | $7,250 |
+| 20,000 | $14,500 |
+| 26,000 (≈500/week) | $18,850 |
+| 40,000 | $29,000 |
+
+That rate is built to cover gas, maintenance, insurance, and depreciation together — which is
+exactly why you can't also deduct those same costs separately on top of it. Pick mileage, and
+mileage is the number.
+
 ## What this means this week
 
-TODO — this section is a placeholder for a real, specific call to action once the book has a
-sample chapter or a checkout link live (e.g. "the tracking method that makes this comparison
-possible in under five minutes a week is in Chapter 4"). Don't publish this article live with the
-TODO still in it.
+Whichever method you land on, the deduction only exists on paper until you can back it up. A
+mileage log needs the date, start and end point, business purpose, and total miles for every trip
+— not a monthly guess reconstructed from memory in March.
