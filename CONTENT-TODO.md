@@ -29,7 +29,11 @@ was seen and deliberately left out, not missed.
     consumer app is gone (it's B2B-only now), so skipped. The `@layor76` TikTok handle belongs to
     an unrelated private account — not you — so I didn't use it; your real one is `@layor1976`.
     **Bandcamp still doesn't exist — you'll need to create it yourself**, then paste the URL into
-    `LINKS.bandcamp`. Instagram and X still `null`, not checked.
+    `LINKS.bandcamp`. **X is now added too** — `@76Layor` (verified, joined July 2026; note this
+    replaced an old `@layor76` handle you confirmed is stale/unused). **Facebook** — couldn't
+    verify `/layor76` or `/layor1976` without logging in (Facebook hides profiles from logged-out
+    visitors), so `LINKS.facebook` is still `null`. Confirm your real handle/URL and I'll add it.
+    Instagram still `null`, not checked.
   - **These links are now actually used** — previously `LINKS` was defined but never imported
     anywhere. Added a "Listen on" / "Follow" row to the site footer (`BaseLayout.astro`) so it
     shows on every page.

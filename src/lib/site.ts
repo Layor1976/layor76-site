@@ -26,7 +26,7 @@ export const LINKS = {
   instagram: null as string | null,
   tiktok: 'https://www.tiktok.com/@layor1976' as string | null,
   youtube: 'https://www.youtube.com/channel/UCLw28FhhfY5irBwzkuwXnAA' as string | null,
-  x: 'https://x.com/layor76' as string | null,
+  x: 'https://x.com/76Layor' as string | null,
   // TODO — couldn't verify without logging in (Facebook hides profiles from
   // logged-out visitors). Confirm your exact handle/URL and paste it here.
   facebook: null as string | null,
