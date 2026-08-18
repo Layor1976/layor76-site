@@ -22,33 +22,47 @@ was seen and deliberately left out, not missed.
 ## Blocks launch — do these first
 
 - **Site facts** (`src/lib/site.ts`)
-  - `CONTACT_EMAIL` — real contact address (currently `TODO@layor76.com`)
-  - `LINKS` — Spotify / Apple Music / YouTube Music / SoundCloud / Bandcamp / Instagram / TikTok /
-    YouTube / X. All `null` right now.
+  - `CONTACT_EMAIL` — still `TODO@layor76.com`, needs a real address.
+  - `LINKS` — Spotify, Apple Music, YouTube Music, YouTube, Amazon Music, and Deezer are now
+    **real, verified links** (found by searching each platform directly and confirming the
+    profile matches — cover art, track titles, everything lined up). SoundCloud and Tidal were
+    checked and you don't have a presence there yet. **Bandcamp doesn't exist yet — you asked me
+    to make one, but creating accounts isn't something I do. You'll need to sign up yourself**;
+    once it exists, paste the URL into `LINKS.bandcamp`. X/Twitter/Instagram/TikTok still `null`,
+    not checked.
+  - Shortened versions of the 4 main platform links (via TinyURL) were given to you separately in
+    chat for anywhere character count matters (social bios, etc.) — the site itself uses the real
+    direct URLs, which is the right call for actual hrefs.
 - **Email capture** — set `BUTTONDOWN_USERNAME` env var, or the signup form stays in its
   mailto-fallback state. See README.
 - **Contact form** — set `FORMSPREE_ID` env var, same deal.
 
 ## Music
 
-- **`the-life-i-fought-for.md`** (the album) — tracklist titles and durations are now **real**,
-  pulled directly from your actual audio files (`02 - Layor76 Music, Art & Merch\The Life I Fought
-  For - Album`), not invented. Two small spelling fixes applied against the filenames: "More Then
-  My Scars" → "More Than My Scars", "My Brothers Smile" → "My Brother's Smile" — confirm those
-  were typos and not intentional. `coverAlt`/cover image still needed — no album art found in your
-  Drive. `releaseDate` still a guess (June 2026 per the brief) — confirm the exact day.
+- **`the-life-i-fought-for.md`** (the album) — tracklist titles and durations are **real**, pulled
+  from your actual audio files. Two small spelling fixes against the filenames: "More Then My
+  Scars" → "More Than My Scars", "My Brothers Smile" → "My Brother's Smile" — confirm those were
+  typos. **Cover art is now the real, official released cover** (found via Amazon Music, same
+  image used for the memoir). `releaseDate` is the **real confirmed date: June 28, 2026** (via
+  Amazon Music and Deezer, both agree).
 
-- **Singles** — now 6 real releases instead of 2, all sourced from your actual "Singles -
-  Released" folder:
-  - `beautiful-hunger.md`, `youve-only-met-the-smoke.md` — cover art in place, still need real
-    release dates and streaming links.
-  - `raised-by-smoke-and-empty-bottles.md`, `born-in-the-dark.md`, `ghost-you-made.md`,
-    `the-day-the-shortcuts-died.md` — **new**, no cover art yet, `releaseDate` is a placeholder
-    guess for all four (confirm real dates), `note` fields are TODO.
-  - Not added: the "Singles - Unreleased" tracks in your Drive (Five Lifetimes, Stronger Then She
-    Knows, Midnight With Janie, and others) — correctly unreleased, shouldn't be on a live site.
-    Add them here when they actually come out.
-  - `streamingLinks` — empty on all 6, add Spotify/Apple/YouTube URLs when you have them.
+- **Singles** — 7 real releases now, all with **real confirmed release dates** cross-checked on
+  Deezer:
+  - `who-am-i-without-the-fire.md` (new — released 06/14/2026, ahead of the album as a preview)
+  - `the-day-the-shortcuts-died.md` (06/28/2026, same day as the album)
+  - `born-in-the-dark.md` (07/11/2026)
+  - `youve-only-met-the-smoke.md` (07/25/2026)
+  - `beautiful-hunger.md` (08/02/2026)
+  - `ghost-you-made.md` (08/08/2026)
+  - `raised-by-smoke-and-empty-bottles.md` — release date still a guess, wasn't in the Deezer
+    results I checked; confirm.
+  - Cover art still missing for 5 of the 7 (only Beautiful Hunger and You've Only Met the Smoke
+    have it) — same DistroKid promo-mockup style as those two, or cleaner flat art if you'd
+    rather, your call.
+  - Not added: the "Singles - Unreleased" tracks (Five Lifetimes, Stronger Then She Knows,
+    Midnight With Janie, and others) — correctly left off, they're not out yet.
+  - `streamingLinks` (per-song deep links) — still empty on all 7. The artist-level profile links
+    are handled separately now in `site.ts` `LINKS`.
 
 ## Writing
 
@@ -79,6 +93,12 @@ was seen and deliberately left out, not missed.
 
 - **RSS feed** — live at `/rss.xml`, auto-discovered via `<link rel="alternate">` in the page
   head. Pulls from the same posts collection, nothing to maintain separately.
+
+- **`src/content/books/the-life-i-fought-for.md`** — the memoir, new. Shares the album's real
+  cover art (they're the same release). Has a generic auto-generated page at
+  `/writing/the-life-i-fought-for` (built via `src/pages/writing/[slug].astro` — any future book
+  gets this same generic page automatically unless you build it a dedicated one like Keep What You
+  Earn's). No checkout link or sample chapter yet, so no "Get the book" button shows.
 
 ## About
 

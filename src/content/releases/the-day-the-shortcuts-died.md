@@ -1,11 +1,12 @@
 ---
 title: "The Day the Shortcuts Died"
 type: single
-releaseDate: 2026-05-15
+releaseDate: 2026-06-28
 label: "Royal Legacy Records"
 coverAlt: "TODO — cover art for this single has not been added yet"
 note: >
-  TODO — release date is a placeholder, confirm real date. Add real note copy.
+  TODO — release date confirmed real (06/28/2026, via Deezer). Add real note
+  copy.
 streamingLinks: {}
 ---
 

@@ -1,9 +1,10 @@
 ---
 title: "The Life I Fought For"
 type: album
-releaseDate: 2026-06-01
+releaseDate: 2026-06-28
 label: "Royal Legacy Records"
-coverAlt: "TODO — cover art for The Life I Fought For has not been added yet"
+cover: "../../assets/images/cover-the-life-i-fought-for.jpg"
+coverAlt: "The Life I Fought For cover — a man in a Layor76 shirt facing a barn at sunset, with a family photo collage above and the title text overlaid"
 featured: true
 note: >
   Before Royal Legacy Records, before any of this, there was Warren, Ohio — the

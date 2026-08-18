@@ -13,14 +13,18 @@ export const CONTACT_EMAIL = 'TODO@layor76.com';
 
 // TODO: paste real links, or leave as null to hide the item from the UI.
 export const LINKS = {
-  spotify: null as string | null,
-  appleMusic: null as string | null,
-  youtubeMusic: null as string | null,
+  spotify: 'https://open.spotify.com/artist/5G43p3f4m3HuiFqtMJySQb' as string | null,
+  appleMusic: 'https://music.apple.com/us/artist/layor76/6794717315' as string | null,
+  youtubeMusic: 'https://music.youtube.com/channel/UCLw28FhhfY5irBwzkuwXnAA' as string | null,
+  amazonMusic: 'https://music.amazon.com/artists/B0H59FXCYK/layor76' as string | null,
+  deezer: 'https://www.deezer.com/us/artist/396722661' as string | null,
   soundcloud: null as string | null,
+  // No Bandcamp page yet — you have to create this one yourself (I don't
+  // create accounts). Once it exists, paste the URL here.
   bandcamp: null as string | null,
   instagram: null as string | null,
   tiktok: null as string | null,
-  youtube: null as string | null,
+  youtube: 'https://www.youtube.com/channel/UCLw28FhhfY5irBwzkuwXnAA' as string | null,
   x: null as string | null,
 };
 
