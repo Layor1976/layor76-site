@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  /* Design plan colors — see /design-plan for the pitch */
+  --color-night-route: #1b2129;
+  --color-dash-panel: #232b34;
+  --color-sodium-amber: #d68a34;
+  --color-sodium-amber-strong: #e8a24e;
+  --color-rust-belt: #c0644b;
+  --color-ledger-paper: #ede9e4;
+  --color-ledger-paper-dim: #b9beb8;
+  --color-steel: #8fa0ac;
+  --color-steel-dim: #4a5058;
+
+  --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+  --font-body: "Literata", Georgia, "Times New Roman", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Courier New", monospace;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--color-night-route);
+  color: var(--color-ledger-paper);
+  font-family: var(--font-body);
+}
+
+::selection {
+  background: var(--color-sodium-amber);
+  color: var(--color-night-route);
+}
+
+a {
+  color: var(--color-sodium-amber-strong);
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-sodium-amber-strong);
+  outline-offset: 3px;
+}
+
+.font-variant-tabular {
+  font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const { data } = post;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: data.title,
+  description: data.description,
+  datePublished: data.pubDate.toISOString().slice(0, 10),
+  ...(data.updatedDate && { dateModified: data.updatedDate.toISOString().slice(0, 10) }),
+  author: { '@type': 'Person', name: 'Layor76' },
+};
+---
+
+<BaseLayout
+  title={`${data.title} — Layor76`}
+  description={data.description}
+  jsonLd={jsonLd}
+  currentTag="Now reading"
+  currentTitle={data.title}
+  currentMeta={data.pubDate.toISOString().slice(0, 10)}
+>
+  <article class="px-6 py-12 lg:px-16 lg:py-16 max-w-2xl">
+    <a href="/writing" class="font-mono text-xs uppercase tracking-widest text-steel hover:text-sodium-amber-strong no-underline">
+      ← All writing
+    </a>
+
+    <p class="font-mono text-xs uppercase tracking-widest text-sodium-amber mt-6 mb-2">
+      {data.pubDate.toISOString().slice(0, 10)}
+      {data.tags.length > 0 && ` · ${data.tags.join(', ')}`}
+    </p>
+    <h1 class="font-display uppercase text-3xl sm:text-4xl text-ledger-paper mb-8 text-balance">
+      {data.title}
+    </h1>
+
+    <div class="max-w-[65ch] text-steel leading-relaxed [&>p]:mb-4 [&>h2]:font-display [&>h2]:uppercase [&>h2]:text-ledger-paper [&>h2]:text-xl [&>h2]:mt-8 [&>h2]:mb-3 [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:mb-4 [&>ul]:space-y-1">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

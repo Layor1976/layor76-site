@@ -1,0 +1,61 @@
+---
+// The site's signature list pattern: a monospace index, a title, and the one
+// real number that matters for this content type (duration, read time, a
+// dollar estimate). Reused for track listings, articles, and book chapters.
+
+interface Entry {
+  index: string; // e.g. "01"
+  title: string;
+  href?: string;
+  stat?: string; // e.g. "03:12", "6 MIN READ", "SAVES ~$1,200/YR"
+  note?: string; // small italic aside, e.g. "(placeholder)"
+}
+
+interface Props {
+  entries: Entry[];
+  label?: string; // e.g. "Music — The Life I Fought For"
+}
+
+const { entries, label } = Astro.props;
+---
+
+<div>
+  {label && (
+    <p class="font-mono text-xs uppercase tracking-widest text-steel mb-2 mt-8 first:mt-0">
+      {label}
+    </p>
+  )}
+  <ul class="border-t border-ledger-paper-dim/25">
+    {
+      entries.map((entry) => {
+        const Tag = entry.href ? 'a' : 'div';
+        return (
+          <li class="border-b border-ledger-paper-dim/25">
+            <Tag
+              href={entry.href}
+              class:list={[
+                'grid grid-cols-[3rem_1fr_auto] items-baseline gap-4 py-3 no-underline group',
+                entry.href && 'hover:bg-dash-panel focus-visible:bg-dash-panel',
+              ]}
+            >
+              <span class="font-mono text-sodium-amber text-sm font-variant-tabular">{entry.index}</span>
+              <span class="font-display uppercase tracking-wide text-base text-ledger-paper group-hover:text-sodium-amber-strong">
+                {entry.title}
+                {entry.note && (
+                  <em class="font-body normal-case tracking-normal not-italic text-steel text-sm ml-2">
+                    {entry.note}
+                  </em>
+                )}
+              </span>
+              {entry.stat && (
+                <span class="font-mono text-sm text-steel whitespace-nowrap font-variant-tabular">
+                  {entry.stat}
+                </span>
+              )}
+            </Tag>
+          </li>
+        );
+      })
+    }
+  </ul>
+</div>

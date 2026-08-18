@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { SITE } from '../lib/site';
+
+const releases = await getCollection('releases', ({ data }) => !data.draft);
+const featured = releases.find((r) => r.data.featured) ?? releases[0];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'MusicGroup',
+  name: 'Layor76',
+  url: SITE.url,
+  genre: 'TODO',
+};
+---
+
+<BaseLayout
+  title={SITE.title}
+  description={SITE.description}
+  jsonLd={jsonLd}
+  currentTag={featured ? 'Now playing' : undefined}
+  currentTitle={featured?.data.title}
+  currentMeta={featured?.data.type === 'album' ? `${featured.data.tracklist?.length ?? 0} tracks` : 'Single'}
+>
+  <section class="px-6 py-16 lg:px-16 lg:py-28 max-w-4xl">
+    <p class="font-mono text-xs uppercase tracking-widest text-sodium-amber mb-4">
+      Northeast Ohio · Royal Legacy Records
+    </p>
+    <h1 class="font-display uppercase text-4xl sm:text-5xl lg:text-6xl leading-[0.95] text-ledger-paper mb-6 text-balance">
+      Night shift. Notebook. Record.
+    </h1>
+    <p class="text-lg text-steel max-w-[52ch] mb-10">
+      Layor76 — gig driver, songwriter, Royal Legacy Records. One route, two jobs.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4">
+      <a
+        href="/music"
+        class="font-mono text-xs uppercase tracking-widest px-6 py-4 bg-sodium-amber text-night-route font-semibold text-center hover:bg-sodium-amber-strong transition-colors no-underline"
+      >
+        Listen to the record
+      </a>
+      <a
+        href="/writing/keep-what-you-earn"
+        class="font-mono text-xs uppercase tracking-widest px-6 py-4 border border-ledger-paper-dim/50 text-ledger-paper text-center hover:border-sodium-amber hover:text-sodium-amber-strong transition-colors no-underline"
+      >
+        Get the tax book updates
+      </a>
+    </div>
+  </section>
+
+  {
+    featured && (
+      <section class="px-6 pb-16 lg:px-16 max-w-4xl">
+        <p class="font-mono text-xs uppercase tracking-widest text-steel mb-3">
+          {featured.data.type === 'album' ? 'Current album' : 'Latest single'}
+        </p>
+        <a href={`/music/${featured.id}`} class="group block no-underline">
+          <h2 class="font-display uppercase text-2xl sm:text-3xl text-ledger-paper group-hover:text-sodium-amber-strong transition-colors">
+            {featured.data.title}
+          </h2>
+          <p class="text-steel mt-2 max-w-[60ch]">{featured.data.note}</p>
+        </a>
+      </section>
+    )
+  }
+</BaseLayout>

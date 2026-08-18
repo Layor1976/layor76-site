@@ -1,0 +1,81 @@
+---
+// Email capture — Buttondown, free tier. Works with JavaScript fully disabled:
+// it's a plain HTML form POST to Buttondown's public embed endpoint.
+//
+// Setup: create a Buttondown account, then set BUTTONDOWN_USERNAME in your
+// environment (.env locally, Cloudflare Pages env vars in production) to
+// your Buttondown username. No API key needed for this endpoint — it's the
+// public subscribe form, not the authenticated API, which is what keeps this
+// working without a server runtime.
+//
+// If BUTTONDOWN_USERNAME is unset, this renders a working mailto: fallback
+// instead of a broken form, so the site never ships a dead signup.
+
+interface Props {
+  heading?: string;
+  subheading?: string;
+  ctaLabel?: string;
+  tag?: string; // optional Buttondown tag to segment this signup source
+}
+
+const {
+  heading = 'Get the launch list',
+  subheading = "One email when the book ships. No drip sequence, nothing else.",
+  ctaLabel = 'Notify me',
+  tag,
+} = Astro.props;
+
+const username = import.meta.env.BUTTONDOWN_USERNAME as string | undefined;
+const formAction = username
+  ? `https://buttondown.com/api/emails/embed-subscribe/${username}`
+  : null;
+---
+
+<div class="border border-ledger-paper-dim/30 bg-dash-panel p-6 sm:p-8">
+  <h2 class="font-display uppercase text-xl sm:text-2xl text-ledger-paper mb-2">{heading}</h2>
+  <p class="text-steel mb-6 max-w-[46ch]">{subheading}</p>
+
+  {
+    formAction ? (
+      <form
+        action={formAction}
+        method="post"
+        target="_blank"
+        rel="noopener"
+        class="flex flex-col sm:flex-row gap-3"
+      >
+        <label for="email-signup" class="sr-only">
+          Email address
+        </label>
+        <input
+          id="email-signup"
+          type="email"
+          name="email"
+          required
+          placeholder="you@email.com"
+          class="flex-1 bg-night-route border border-ledger-paper-dim/40 px-4 py-3 text-ledger-paper placeholder:text-steel font-mono text-sm focus-visible:outline-2 focus-visible:outline-sodium-amber-strong"
+        />
+        {tag && <input type="hidden" name="tag" value={tag} />}
+        <input type="hidden" value="1" name="embed" />
+        <button
+          type="submit"
+          class="font-mono text-xs uppercase tracking-widest px-6 py-3 bg-sodium-amber text-night-route font-semibold hover:bg-sodium-amber-strong transition-colors"
+        >
+          {ctaLabel}
+        </button>
+      </form>
+    ) : (
+      <div class="border border-rust-belt/60 bg-night-route p-4">
+        <p class="text-sm text-steel">
+          Signup isn't wired up yet (missing <code class="font-mono text-rust-belt">BUTTONDOWN_USERNAME</code>).
+          Email{' '}
+          <a href="mailto:TODO@layor76.com" class="text-sodium-amber-strong">
+            TODO@layor76.com
+          </a>{' '}
+          to get on the list in the meantime.
+        </p>
+      </div>
+    )
+  }
+  <p class="mt-4 text-xs text-steel">No spam. Unsubscribe anytime.</p>
+</div>

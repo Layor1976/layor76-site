@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://layor76.com/sitemap-index.xml

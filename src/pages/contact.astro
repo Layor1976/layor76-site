@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { CONTACT_EMAIL } from '../lib/site';
+
+// Contact form posts to Formspree's free tier (no server runtime needed —
+// it's a plain HTML form POST, works with JavaScript fully disabled).
+// Setup: create a free form at formspree.io, then set FORMSPREE_ID in your
+// environment to the form ID from the endpoint they give you
+// (https://formspree.io/f/XXXXXXX -> FORMSPREE_ID=XXXXXXX).
+// If unset, this renders a plain mailto: fallback instead of a broken form.
+const formspreeId = import.meta.env.FORMSPREE_ID as string | undefined;
+const formAction = formspreeId ? `https://formspree.io/f/${formspreeId}` : null;
+---
+
+<BaseLayout title="Contact — Layor76" description="Get in touch with Layor76 — general contact, booking, and licensing inquiries.">
+  <section class="px-6 py-12 lg:px-16 lg:py-16 max-w-xl">
+    <h1 class="font-display uppercase text-3xl sm:text-4xl text-ledger-paper mb-6">Contact</h1>
+    <p class="text-steel mb-8">
+      Email directly at
+      <a href={`mailto:${CONTACT_EMAIL}`} class="text-sodium-amber-strong">{CONTACT_EMAIL}</a>,
+      or use the form below.
+    </p>
+
+    {
+      formAction ? (
+        <form action={formAction} method="post" class="flex flex-col gap-4">
+          <div>
+            <label for="name" class="block font-mono text-xs uppercase tracking-widest text-steel mb-1">
+              Name
+            </label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              required
+              class="w-full bg-dash-panel border border-ledger-paper-dim/40 px-4 py-3 text-ledger-paper focus-visible:outline-2 focus-visible:outline-sodium-amber-strong"
+            />
+          </div>
+          <div>
+            <label for="email" class="block font-mono text-xs uppercase tracking-widest text-steel mb-1">
+              Email
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              class="w-full bg-dash-panel border border-ledger-paper-dim/40 px-4 py-3 text-ledger-paper focus-visible:outline-2 focus-visible:outline-sodium-amber-strong"
+            />
+          </div>
+          <div>
+            <label for="reason" class="block font-mono text-xs uppercase tracking-widest text-steel mb-1">
+              Reason
+            </label>
+            <select
+              id="reason"
+              name="reason"
+              class="w-full bg-dash-panel border border-ledger-paper-dim/40 px-4 py-3 text-ledger-paper focus-visible:outline-2 focus-visible:outline-sodium-amber-strong"
+            >
+              <option>General</option>
+              <option>Booking</option>
+              <option>Licensing</option>
+            </select>
+          </div>
+          <div>
+            <label for="message" class="block font-mono text-xs uppercase tracking-widest text-steel mb-1">
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={5}
+              required
+              class="w-full bg-dash-panel border border-ledger-paper-dim/40 px-4 py-3 text-ledger-paper focus-visible:outline-2 focus-visible:outline-sodium-amber-strong"
+            />
+          </div>
+          <button
+            type="submit"
+            class="font-mono text-xs uppercase tracking-widest px-6 py-4 bg-sodium-amber text-night-route font-semibold hover:bg-sodium-amber-strong transition-colors self-start"
+          >
+            Send
+          </button>
+        </form>
+      ) : (
+        <div class="border border-rust-belt/50 bg-dash-panel p-4">
+          <p class="text-sm text-steel">
+            The contact form isn't wired up yet (missing <code class="font-mono text-rust-belt">FORMSPREE_ID</code>).
+            Use the email link above in the meantime — for booking or licensing, just say so in the email.
+          </p>
+        </div>
+      )
+    }
+  </section>
+</BaseLayout>
