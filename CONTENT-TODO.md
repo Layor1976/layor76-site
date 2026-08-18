@@ -32,7 +32,9 @@ was seen and deliberately left out, not missed.
     `LINKS.bandcamp`. **X is now added too** — `@76Layor` (verified, joined July 2026; note this
     replaced an old `@layor76` handle you confirmed is stale/unused). **Facebook is added too** —
     `facebook.com/layor76`, confirmed by you directly (I couldn't verify it myself since Facebook
-    hides profiles from logged-out visitors). Instagram still `null`, not checked.
+    hides profiles from logged-out visitors). **Instagram is added too** — `@layor_76` (confirmed
+    real: Meta Verified, correct avatar). All social/streaming platforms in `LINKS` are now filled
+    in except Bandcamp (doesn't exist yet, see above).
   - **These links are now actually used** — previously `LINKS` was defined but never imported
     anywhere. Added a "Listen on" / "Follow" row to the site footer (`BaseLayout.astro`) so it
     shows on every page.

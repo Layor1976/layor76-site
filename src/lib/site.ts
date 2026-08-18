@@ -23,7 +23,7 @@ export const LINKS = {
   // No Bandcamp page yet — you have to create this one yourself (I don't
   // create accounts). Once it exists, paste the URL here.
   bandcamp: null as string | null,
-  instagram: null as string | null,
+  instagram: 'https://www.instagram.com/layor_76/' as string | null,
   tiktok: 'https://www.tiktok.com/@layor1976' as string | null,
   youtube: 'https://www.youtube.com/channel/UCLw28FhhfY5irBwzkuwXnAA' as string | null,
   x: 'https://x.com/76Layor' as string | null,
