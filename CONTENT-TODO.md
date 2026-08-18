@@ -94,6 +94,19 @@ was seen and deliberately left out, not missed.
 - **RSS feed** — live at `/rss.xml`, auto-discovered via `<link rel="alternate">` in the page
   head. Pulls from the same posts collection, nothing to maintain separately.
 
+- **Three more book projects added**, all confirmed real from your archive (not guessed), all
+  early-stage and correctly marked `in-progress` with no cover art or sales copy yet:
+  - `project-smoke.md` — the actual book (not the band pre-production binder, which is a
+    different thing living in your Drive under the same working name — I mixed those up at first,
+    thanks for the correction). Per your own notes: "a book of human observations... not a memoir,
+    not self-help."
+  - `project-fire.md` — future book on identity, transformation, purpose, resilience.
+  - `echoes.md` — the poetry collection, working subtitle "Poems from the Fire, the Smoke, and the
+    Silence." **No actual poems are reproduced anywhere in this repo or on the site** — confirmed
+    per your content rules, even though I read some in your archive for context.
+  - All three titles are working titles per your own notes ("when the time comes to publish, each
+    project can receive its final title") — expect these to change.
+
 - **`src/content/books/the-life-i-fought-for.md`** — the memoir, new. Shares the album's real
   cover art (they're the same release). Has a generic auto-generated page at
   `/writing/the-life-i-fought-for` (built via `src/pages/writing/[slug].astro` — any future book
