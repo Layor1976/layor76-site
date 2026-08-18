@@ -151,8 +151,16 @@ was seen and deliberately left out, not missed.
 ## About
 
 - **`src/pages/about.astro`** — now has the Warren, Ohio line (see the review flag at the top of
-  this file). One more explicit TODO left for anything else you want said — still short on
-  purpose.
+  this file), plus two new additions (2026-08-18):
+  - A paragraph adapted from your real, already-published Spotify bio ("music for people who've
+    lived through things they don't always know how to explain..."), not invented.
+  - A paragraph on your tattoo — design and meaning are your own words, taken directly off your
+    branding artwork (the fire/ice split figure, "I am not what broke me," etc.), not from the
+    ChatGPT "symbolism analysis" conversation in your archive, which is worth knowing about: it's
+    just the AI guessing at a photo, and its own two passes contradicted each other (one called it
+    a raven, the other a skull) — I didn't use any of that.
+  - **Still need the actual tattoo photo** — the Drive link you sent turned out to be a Spotify
+    app screenshot, not the tattoo. Text is accurate and live; add the real photo when you can.
 
 ## Scaffolded, not live
 
