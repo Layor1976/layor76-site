@@ -4,11 +4,18 @@ status: in-progress
 tagline: "A book of human observations — not a memoir, not self-help."
 coverAlt: "TODO — cover art for Project Smoke has not been added yet"
 description: >
-  A working title. A book about the human condition and what people see —
-  not Layor76's own story, not advice, just observation. Early stage.
+  A finished manuscript — twenty-eight chapters of short, observational
+  essays about the gap between how people look from the outside and what's
+  actually going on underneath. No names, no memoir framing, not Layor76's
+  own story. The book-length version of the idea behind "You've Only Met
+  the Smoke."
 draft: false
 ---
 
-TODO — working title, subject to change on publish. No dedicated sales page yet — this uses the
-generic book page at `src/pages/writing/[slug].astro`. Build a real page once there's more to
-show.
+The writing is done — twenty-eight chapters, complete but not yet prepared for release. It isn't
+about Layor76's own life; it's a patient, unhurried look at the small ways people build a surface
+self and the effort it takes to see past someone else's. Status here is "in-progress" because it
+hasn't been readied for publishing, not because there's more left to write.
+
+No dedicated sales page yet — this uses the generic book page at `src/pages/writing/[slug].astro`.
+Build a real page once there's more to show.

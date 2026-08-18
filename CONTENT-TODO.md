@@ -119,15 +119,26 @@ was seen and deliberately left out, not missed.
   head. Pulls from the same posts collection, nothing to maintain separately.
 
 - **Three more book projects added**, all confirmed real from your archive (not guessed), all
-  early-stage and correctly marked `in-progress` with no cover art or sales copy yet:
+  early-stage and correctly marked `in-progress` with no cover art or sales copy yet. Descriptions
+  were rewritten after a full read of the actual manuscripts (2026-08-18):
   - `project-smoke.md` — the actual book (not the band pre-production binder, which is a
-    different thing living in your Drive under the same working name — I mixed those up at first,
-    thanks for the correction). Per your own notes: "a book of human observations... not a memoir,
-    not self-help."
-  - `project-fire.md` — future book on identity, transformation, purpose, resilience.
-  - `echoes.md` — the poetry collection, working subtitle "Poems from the Fire, the Smoke, and the
-    Silence." **No actual poems are reproduced anywhere in this repo or on the site** — confirmed
-    per your content rules, even though I read some in your archive for context.
+    different thing living in your Drive under the same working name). **This one is genuinely
+    finished** — 28 chapters, a complete manuscript. It's the book-form version of the idea behind
+    "You've Only Met the Smoke" — people only ever meet each other's surface ("smoke"), rarely the
+    fire underneath. Description on the site now reflects that it's written, just not published.
+  - `project-fire.md` — **checked, and there's no manuscript.** The only file under this name in
+    your archive is unrelated lyric/production chat. It's a title and a one-line direction only
+    ("identity, transformation, purpose, resilience"). Site copy now says this plainly rather than
+    implying more exists.
+  - `echoes.md` — the poetry collection. **17 finished pieces** (each pairs a short prose "Whisper"
+    with a poem), a couple more drafted but unplaced, and a bigger collection planned beyond that —
+    only the first section is actually written. One approved piece, "The Photograph That Blinked,"
+    is listed as done in two of your version files but its actual text doesn't survive anywhere in
+    the archive — flagging in case you have a copy elsewhere, because I couldn't find one.
+    **No actual poems are reproduced anywhere in this repo or on the site.** Note: your archive
+    calls this project "Echoes in Time" in places — the site currently uses just "Echoes." Didn't
+    rename it myself since that changes the URL (`/writing/echoes`); say the word if you want the
+    longer title.
   - All three titles are working titles per your own notes ("when the time comes to publish, each
     project can receive its final title") — expect these to change.
 
