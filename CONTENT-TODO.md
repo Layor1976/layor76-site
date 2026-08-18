@@ -23,13 +23,16 @@ was seen and deliberately left out, not missed.
 
 - **Site facts** (`src/lib/site.ts`)
   - `CONTACT_EMAIL` — still `TODO@layor76.com`, needs a real address.
-  - `LINKS` — Spotify, Apple Music, YouTube Music, YouTube, Amazon Music, and Deezer are now
-    **real, verified links** (found by searching each platform directly and confirming the
-    profile matches — cover art, track titles, everything lined up). SoundCloud and Tidal were
-    checked and you don't have a presence there yet. **Bandcamp doesn't exist yet — you asked me
-    to make one, but creating accounts isn't something I do. You'll need to sign up yourself**;
-    once it exists, paste the URL into `LINKS.bandcamp`. X/Twitter/Instagram/TikTok still `null`,
-    not checked.
+  - `LINKS` — Spotify, Apple Music, YouTube Music, YouTube, Amazon Music, Deezer, and now
+    **iHeartRadio** and **TikTok** (`@layor1976`) are **real, verified links**. SoundCloud,
+    Tidal, Pandora, and Audiomack were checked — no presence on any of them yet. Napster's
+    consumer app is gone (it's B2B-only now), so skipped. The `@layor76` TikTok handle belongs to
+    an unrelated private account — not you — so I didn't use it; your real one is `@layor1976`.
+    **Bandcamp still doesn't exist — you'll need to create it yourself**, then paste the URL into
+    `LINKS.bandcamp`. Instagram and X still `null`, not checked.
+  - **These links are now actually used** — previously `LINKS` was defined but never imported
+    anywhere. Added a "Listen on" / "Follow" row to the site footer (`BaseLayout.astro`) so it
+    shows on every page.
   - Shortened versions of the 4 main platform links (via TinyURL) were given to you separately in
     chat for anywhere character count matters (social bios, etc.) — the site itself uses the real
     direct URLs, which is the right call for actual hrefs.
@@ -56,13 +59,29 @@ was seen and deliberately left out, not missed.
   - `ghost-you-made.md` (08/08/2026)
   - `raised-by-smoke-and-empty-bottles.md` — release date still a guess, wasn't in the Deezer
     results I checked; confirm.
-  - Cover art still missing for 5 of the 7 (only Beautiful Hunger and You've Only Met the Smoke
-    have it) — same DistroKid promo-mockup style as those two, or cleaner flat art if you'd
-    rather, your call.
-  - Not added: the "Singles - Unreleased" tracks (Five Lifetimes, Stronger Then She Knows,
-    Midnight With Janie, and others) — correctly left off, they're not out yet.
-  - `streamingLinks` (per-song deep links) — still empty on all 7. The artist-level profile links
-    are handled separately now in `site.ts` `LINKS`.
+  - **Cover art is now real on all 7** — pulled directly from Spotify's own CDN via their oEmbed
+    API (the official released artwork, not a mockup).
+  - **Every release now has a working audio player** — an official Spotify embed
+    (`AudioPlayer.astro`), driven by a new `spotifyId` field in each release's frontmatter. No
+    audio is hosted on the site; it streams straight from Spotify, so this works even with the
+    "no server runtime" constraint.
+  - **Beautiful Hunger also has its real YouTube Short embedded** (`YouTubeEmbed.astro`, driven by
+    a new `youtubeShortId` field) — found on your channel, confirmed by the audio credit
+    ("Beautiful Hunger · Layor76") on the Short itself.
+  - `streamingLinks` (per-song deep links, the Apple Music/YouTube Music/etc. buttons on each
+    release page) — still empty on all 7. Lower priority now that the Spotify player handles
+    actual listening; still worth filling in per-track links eventually.
+  - **New: `/music/coming-soon` page** — built from your real "Singles - Unreleased" Drive folder.
+    Lists 9 unreleased track titles (no audio, no lyrics — titles only, since none of this is out)
+    and embeds the real short video you made for "Dig Deeper" (44 sec, `public/videos/`). Linked
+    from the main `/music` page. **One track from that folder, "Midnight with Janie," was left off
+    this list on purpose** — it puts a real, non-public person's name (your wife's) in a public
+    teaser list, which felt like the same category of call I flagged before about not publishing
+    private material about her without you explicitly saying so. Add it yourself if you're fine
+    with it being public.
+  - The "Dig Deeper" video is 44MB for 44 seconds — loads fine (`preload="none"`, only fetches on
+    click) but is a heavy file. Worth compressing if you get the chance; no video tooling on this
+    machine to do it here.
 
 ## Writing
 

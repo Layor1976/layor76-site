@@ -1,0 +1,23 @@
+---
+// Official YouTube iframe embed — same reasoning as AudioPlayer.astro: no
+// custom JS, no video hosting, works with JS disabled (iframe just won't
+// render, page still works).
+interface Props {
+  videoId: string;
+  title: string;
+}
+const { videoId, title } = Astro.props;
+---
+
+<div class="border border-ledger-paper-dim/25 bg-dash-panel aspect-[9/16] max-w-[280px]">
+  <iframe
+    src={`https://www.youtube.com/embed/${videoId}`}
+    title={title}
+    width="100%"
+    height="100%"
+    style="border: 0;"
+    loading="lazy"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</div>

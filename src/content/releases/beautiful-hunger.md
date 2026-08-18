@@ -3,6 +3,8 @@ title: "Beautiful Hunger"
 type: single
 releaseDate: 2026-08-02
 label: "Royal Legacy Records"
+spotifyId: "74D8WpPnScr0STRts37qt8"
+youtubeShortId: "1WOCd4rMTWg"
 cover: "../../assets/images/cover-beautiful-hunger-v2.png"
 coverAlt: "Beautiful Hunger single cover — a hooded figure standing in smoke and firelight"
 note: >

@@ -10,7 +10,15 @@ const releases = (await getCollection('releases', ({ data }) => !data.draft)).so
 
 <BaseLayout title="Music — Layor76" description="Albums and singles from Layor76 on Royal Legacy Records.">
   <section class="px-6 py-12 lg:px-16 lg:py-16">
-    <h1 class="font-display uppercase text-3xl sm:text-4xl text-ledger-paper mb-10">Music</h1>
+    <div class="flex flex-wrap items-baseline justify-between gap-4 mb-10">
+      <h1 class="font-display uppercase text-3xl sm:text-4xl text-ledger-paper">Music</h1>
+      <a
+        href="/music/coming-soon"
+        class="font-mono text-xs uppercase tracking-widest px-4 py-2 border border-ledger-paper-dim/40 hover:border-sodium-amber hover:text-sodium-amber-strong no-underline"
+      >
+        Coming soon →
+      </a>
+    </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {

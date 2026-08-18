@@ -12,6 +12,8 @@ const releases = defineCollection({
       cover: image().optional(),
       coverAlt: z.string(),
       note: z.string(),
+      spotifyId: z.string().optional(), // Spotify album ID (singles are 1-track albums) — powers the embedded player.
+      youtubeShortId: z.string().optional(), // YouTube Shorts video ID for this release, if one exists.
       tracklist: z
         .array(
           z.object({

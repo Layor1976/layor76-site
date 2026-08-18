@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TripLog from '../../components/TripLog.astro';
+
+// Titles pulled straight from the real "Singles - Unreleased" archive.
+// No audio or lyrics from this material goes on the site — titles only,
+// since none of it is out yet. One track from this same folder
+// ("Midnight with Janie") is deliberately left off this list — see
+// CONTENT-TODO.md.
+const vault = [
+  'Five Lifetimes',
+  'Stronger Than She Knows',
+  'Trying to Dream Through the Gunfire',
+  'We Broke the Curse',
+  'Holding Back the Dark',
+  'Where I Belong',
+  'Misnamed',
+  'Done Asking',
+  "You Want Me Wrong",
+].map((title, i) => ({
+  index: String(i + 1).padStart(2, '0'),
+  title,
+  stat: 'UNRELEASED',
+}));
+---
+
+<BaseLayout
+  title="Coming Soon — Layor76"
+  description="A first look at what's next from Layor76 — including a preview of Dig Deeper."
+  currentTag="Now viewing"
+  currentTitle="Coming Soon"
+>
+  <article class="px-6 py-12 lg:px-16 lg:py-16 max-w-4xl">
+    <a href="/music" class="font-mono text-xs uppercase tracking-widest text-steel hover:text-sodium-amber-strong no-underline">
+      ← All music
+    </a>
+
+    <p class="font-mono text-xs uppercase tracking-widest text-sodium-amber mb-2 mt-6">Not out yet</p>
+    <h1 class="font-display uppercase text-3xl sm:text-4xl text-ledger-paper mb-4 text-balance">
+      Coming Soon
+    </h1>
+    <p class="text-steel max-w-[60ch]">
+      A look ahead at what's still in the works — unreleased tracks and a first preview.
+      Nothing here is streaming yet.
+    </p>
+
+    <div class="mt-10 max-w-lg">
+      <p class="font-mono text-xs uppercase tracking-widest text-sodium-amber mb-3">Preview — "Dig Deeper"</p>
+      <div class="border border-ledger-paper-dim/25 bg-dash-panel">
+        <video
+          controls
+          preload="none"
+          class="w-full block"
+          aria-label="Short video preview for the unreleased track Dig Deeper"
+        >
+          <source src="/videos/dig-deeper-teaser.mp4" type="video/mp4" />
+          Your browser doesn't support embedded video. TODO — direct download link once this track is finished.
+        </video>
+      </div>
+      <p class="font-mono text-xs text-steel mt-2">TODO — a short line about what this track is about, once you're ready to say more.</p>
+    </div>
+
+    <TripLog label="In the vault" entries={vault} />
+  </article>
+</BaseLayout>

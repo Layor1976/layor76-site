@@ -3,6 +3,7 @@ title: "The Life I Fought For"
 type: album
 releaseDate: 2026-06-28
 label: "Royal Legacy Records"
+spotifyId: "203soE0DZTnNGVQiVED9XZ"
 cover: "../../assets/images/cover-the-life-i-fought-for.jpg"
 coverAlt: "The Life I Fought For cover — a man in a Layor76 shirt facing a barn at sunset, with a family photo collage above and the title text overlaid"
 featured: true

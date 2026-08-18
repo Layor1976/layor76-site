@@ -1,0 +1,23 @@
+---
+// Official Spotify oEmbed player. No custom playback JS, no audio hosting —
+// Spotify's iframe is self-contained, so this works with JS fully disabled
+// too (the iframe just won't render, and the streaming links list below it
+// still gets people to the music).
+interface Props {
+  spotifyId: string;
+  title: string;
+}
+const { spotifyId, title } = Astro.props;
+---
+
+<div class="border border-ledger-paper-dim/25 bg-dash-panel">
+  <iframe
+    src={`https://open.spotify.com/embed/album/${spotifyId}?utm_source=generator&theme=0`}
+    title={`Spotify player — ${title}`}
+    width="100%"
+    height="152"
+    style="border: 0;"
+    loading="lazy"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+  ></iframe>
+</div>

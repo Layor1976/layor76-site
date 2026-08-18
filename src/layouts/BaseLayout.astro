@@ -1,7 +1,33 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import InstrumentRail from '../components/InstrumentRail.astro';
+import { LINKS } from '../lib/site';
 import '../styles/global.css';
+
+const listenLabels: Record<string, string> = {
+  spotify: 'Spotify',
+  appleMusic: 'Apple Music',
+  youtubeMusic: 'YouTube Music',
+  amazonMusic: 'Amazon Music',
+  deezer: 'Deezer',
+  iheart: 'iHeartRadio',
+  soundcloud: 'SoundCloud',
+  bandcamp: 'Bandcamp',
+};
+const listenEntries = Object.entries(LINKS).filter(
+  ([key, url]) => url && key in listenLabels
+);
+
+const followLabels: Record<string, string> = {
+  tiktok: 'TikTok',
+  instagram: 'Instagram',
+  x: 'X',
+  facebook: 'Facebook',
+  youtube: 'YouTube',
+};
+const followEntries = Object.entries(LINKS).filter(
+  ([key, url]) => url && key in followLabels
+);
 
 interface Props {
   title: string;
@@ -27,6 +53,38 @@ const { title, description, image, jsonLd, currentTag, currentTitle, currentMeta
       <main id="main" class="flex-1 min-w-0">
         <slot />
         <footer class="border-t border-ledger-paper-dim/25 mt-16 px-6 py-8 lg:px-12">
+          {listenEntries.length > 0 && (
+            <div class="mb-4">
+              <p class="font-mono text-xs uppercase tracking-widest text-steel mb-2">Listen on</p>
+              <div class="flex flex-wrap gap-x-4 gap-y-1">
+                {listenEntries.map(([key, url]) => (
+                  <a
+                    href={url as string}
+                    rel="noopener"
+                    class="font-mono text-xs text-steel hover:text-sodium-amber-strong"
+                  >
+                    {listenLabels[key]}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+          {followEntries.length > 0 && (
+            <div class="mb-4">
+              <p class="font-mono text-xs uppercase tracking-widest text-steel mb-2">Follow</p>
+              <div class="flex flex-wrap gap-x-4 gap-y-1">
+                {followEntries.map(([key, url]) => (
+                  <a
+                    href={url as string}
+                    rel="noopener"
+                    class="font-mono text-xs text-steel hover:text-sodium-amber-strong"
+                  >
+                    {followLabels[key]}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
           <p class="font-mono text-xs text-steel">
             © {new Date().getFullYear()} Layor76 · Royal Legacy Records ·
             <a href="/contact" class="ml-1">Contact</a>

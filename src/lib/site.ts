@@ -18,14 +18,18 @@ export const LINKS = {
   youtubeMusic: 'https://music.youtube.com/channel/UCLw28FhhfY5irBwzkuwXnAA' as string | null,
   amazonMusic: 'https://music.amazon.com/artists/B0H59FXCYK/layor76' as string | null,
   deezer: 'https://www.deezer.com/us/artist/396722661' as string | null,
+  iheart: 'https://www.iheart.com/artist/layor76-51059949' as string | null,
   soundcloud: null as string | null,
   // No Bandcamp page yet — you have to create this one yourself (I don't
   // create accounts). Once it exists, paste the URL here.
   bandcamp: null as string | null,
   instagram: null as string | null,
-  tiktok: null as string | null,
+  tiktok: 'https://www.tiktok.com/@layor1976' as string | null,
   youtube: 'https://www.youtube.com/channel/UCLw28FhhfY5irBwzkuwXnAA' as string | null,
-  x: null as string | null,
+  x: 'https://x.com/layor76' as string | null,
+  // TODO — couldn't verify without logging in (Facebook hides profiles from
+  // logged-out visitors). Confirm your exact handle/URL and paste it here.
+  facebook: null as string | null,
 };
 
 // One-line change when the book goes on sale: paste the Gumroad/Lemon Squeezy

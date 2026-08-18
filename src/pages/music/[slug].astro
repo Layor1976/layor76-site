@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import TripLog from '../../components/TripLog.astro';
+import AudioPlayer from '../../components/AudioPlayer.astro';
+import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
 import { getCollection, render } from 'astro:content';
 import { Image } from 'astro:assets';
 import { SITE } from '../../lib/site';
@@ -94,6 +96,19 @@ const jsonLd = {
         )}
       </div>
     </div>
+
+    {(data.spotifyId || data.youtubeShortId) && (
+      <div class="mt-8 flex flex-wrap gap-6 items-start">
+        {data.spotifyId && (
+          <div class="max-w-lg flex-1 min-w-[280px]">
+            <AudioPlayer spotifyId={data.spotifyId} title={data.title} />
+          </div>
+        )}
+        {data.youtubeShortId && (
+          <YouTubeEmbed videoId={data.youtubeShortId} title={`${data.title} — YouTube Short`} />
+        )}
+      </div>
+    )}
 
     {trackEntries.length > 0 && <TripLog label="Tracklist" entries={trackEntries} />}
 
