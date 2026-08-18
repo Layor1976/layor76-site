@@ -30,10 +30,9 @@ was seen and deliberately left out, not missed.
     an unrelated private account — not you — so I didn't use it; your real one is `@layor1976`.
     **Bandcamp still doesn't exist — you'll need to create it yourself**, then paste the URL into
     `LINKS.bandcamp`. **X is now added too** — `@76Layor` (verified, joined July 2026; note this
-    replaced an old `@layor76` handle you confirmed is stale/unused). **Facebook** — couldn't
-    verify `/layor76` or `/layor1976` without logging in (Facebook hides profiles from logged-out
-    visitors), so `LINKS.facebook` is still `null`. Confirm your real handle/URL and I'll add it.
-    Instagram still `null`, not checked.
+    replaced an old `@layor76` handle you confirmed is stale/unused). **Facebook is added too** —
+    `facebook.com/layor76`, confirmed by you directly (I couldn't verify it myself since Facebook
+    hides profiles from logged-out visitors). Instagram still `null`, not checked.
   - **These links are now actually used** — previously `LINKS` was defined but never imported
     anywhere. Added a "Listen on" / "Follow" row to the site footer (`BaseLayout.astro`) so it
     shows on every page.
