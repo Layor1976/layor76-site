@@ -2,9 +2,9 @@
 
 export const SITE = {
   name: 'Layor76',
-  title: 'Layor76 — Songs and the numbers behind them',
+  title: 'Layor76 — Music, memory, and the life in between',
   description:
-    'Layor76 — musician on Royal Legacy Records, and a 1099 gig driver writing the tax playbook drivers actually need.',
+    'Layor76 — songs pulled from the dark, words written after the noise died down. Royal Legacy Records, Northeast Ohio.',
   url: 'https://layor76.com',
 };
 
