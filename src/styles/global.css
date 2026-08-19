@@ -2,15 +2,16 @@
 
 @theme {
   /* Design plan colors — see /design-plan for the pitch */
-  --color-night-route: #0e1319;
-  --color-dash-panel: #171e26;
-  --color-sodium-amber: #d68a34;
-  --color-sodium-amber-strong: #e8a24e;
-  --color-rust-belt: #c0644b;
-  --color-ledger-paper: #e7e8e6;
-  --color-ledger-paper-dim: #a7b0b6;
-  --color-steel: #7f93a3;
-  --color-steel-dim: #384450;
+  --color-night-route: #0a0a0b;
+  --color-dash-panel: #161617;
+  --color-sodium-amber: #d1332b;
+  --color-sodium-amber-strong: #ff4438;
+  --color-rust-belt: #8c2a22;
+  --color-ledger-paper: #e6e6e6;
+  --color-ledger-paper-dim: #9a9a9a;
+  --color-steel: #868686;
+  --color-steel-dim: #333333;
+  --color-signal-green: #39ff14;
 
   --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
   --font-body: "Literata", Georgia, "Times New Roman", serif;
