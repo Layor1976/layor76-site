@@ -31,7 +31,7 @@ const formAction = username
   : null;
 ---
 
-<div class="border border-ledger-paper-dim/30 bg-dash-panel p-6 sm:p-8">
+<div class="border border-signal-green/30 bg-dash-panel p-6 sm:p-8">
   <h2 class="font-display uppercase text-xl sm:text-2xl text-ledger-paper mb-2">{heading}</h2>
   <p class="text-steel mb-6 max-w-[46ch]">{subheading}</p>
 
@@ -53,7 +53,7 @@ const formAction = username
           name="email"
           required
           placeholder="you@email.com"
-          class="flex-1 bg-night-route border border-ledger-paper-dim/40 px-4 py-3 text-ledger-paper placeholder:text-steel font-mono text-sm focus-visible:outline-2 focus-visible:outline-sodium-amber-strong"
+          class="flex-1 bg-night-route border border-signal-green/40 px-4 py-3 text-ledger-paper placeholder:text-steel font-mono text-sm focus-visible:outline-2 focus-visible:outline-sodium-amber-strong"
         />
         {tag && <input type="hidden" name="tag" value={tag} />}
         <input type="hidden" value="1" name="embed" />

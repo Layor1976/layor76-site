@@ -14,7 +14,7 @@ const releases = (await getCollection('releases', ({ data }) => !data.draft)).so
       <h1 class="font-display uppercase text-3xl sm:text-4xl text-ledger-paper">Music</h1>
       <a
         href="/music/coming-soon"
-        class="font-mono text-xs uppercase tracking-widest px-4 py-2 border border-ledger-paper-dim/40 hover:border-sodium-amber hover:text-sodium-amber-strong no-underline"
+        class="font-mono text-xs uppercase tracking-widest px-4 py-2 border border-signal-green/40 hover:border-sodium-amber hover:text-sodium-amber-strong no-underline"
       >
         Coming soon →
       </a>
@@ -24,7 +24,7 @@ const releases = (await getCollection('releases', ({ data }) => !data.draft)).so
       {
         releases.map((release) => (
           <a href={`/music/${release.id}`} class="group block no-underline">
-            <div class="aspect-square bg-dash-panel border border-ledger-paper-dim/25 mb-3 overflow-hidden flex items-center justify-center">
+            <div class="aspect-square bg-dash-panel border border-signal-green/25 mb-3 overflow-hidden flex items-center justify-center">
               {release.data.cover ? (
                 <Image
                   src={release.data.cover}

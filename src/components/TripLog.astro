@@ -25,12 +25,12 @@ const { entries, label } = Astro.props;
       {label}
     </p>
   )}
-  <ul class="border-t border-ledger-paper-dim/25">
+  <ul class="border-t border-signal-green/25">
     {
       entries.map((entry) => {
         const Tag = entry.href ? 'a' : 'div';
         return (
-          <li class="border-b border-ledger-paper-dim/25">
+          <li class="border-b border-signal-green/25">
             <Tag
               href={entry.href}
               class:list={[

@@ -63,7 +63,7 @@ const jsonLd = {
     </a>
 
     <div class="mt-6 grid sm:grid-cols-[240px_1fr] gap-8 items-start">
-      <div class="aspect-square bg-dash-panel border border-ledger-paper-dim/25 flex items-center justify-center">
+      <div class="aspect-square bg-dash-panel border border-signal-green/25 flex items-center justify-center">
         {data.cover ? (
           <Image src={data.cover} alt={data.coverAlt} width={480} height={480} class="w-full h-full object-cover" />
         ) : (
@@ -84,7 +84,7 @@ const jsonLd = {
             {streamingEntries.map(([key, url]) => (
               <a
                 href={url as string}
-                class="font-mono text-xs uppercase tracking-widest px-4 py-2 border border-ledger-paper-dim/40 hover:border-sodium-amber hover:text-sodium-amber-strong no-underline"
+                class="font-mono text-xs uppercase tracking-widest px-4 py-2 border border-signal-green/40 hover:border-sodium-amber hover:text-sodium-amber-strong no-underline"
                 rel="noopener"
               >
                 {streamingLabels[key] ?? key}
