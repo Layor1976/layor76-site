@@ -2,7 +2,8 @@
 title: "Project Smoke"
 status: in-progress
 tagline: "A book of human observations — not a memoir, not self-help."
-coverAlt: "TODO — cover art for Project Smoke has not been added yet"
+cover: "../../assets/images/cover-project-smoke.jpg"
+coverAlt: "Project Smoke cover — a noir city scene wrapped in smoke, a figure walking a rain-lit street, another silhouetted in a high window"
 description: >
   A finished manuscript — twenty-eight chapters of short, observational
   essays about the gap between how people look from the outside and what's
