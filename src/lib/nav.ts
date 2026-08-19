@@ -9,4 +9,7 @@ export const NAV_ITEMS = [
   // Uncomment when ready — see src/pages/tools.astro and src/pages/store.astro.
   // { label: 'Tools', href: '/tools' },
   // { label: 'Store', href: '/store' },
+  // Kept last and separate on purpose — the tax/1099 material isn't part of
+  // the music/writing identity, it's a distinct small utility off to the side.
+  { label: 'Tax Guide', href: '/writing/keep-what-you-earn' },
 ];

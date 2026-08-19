@@ -28,27 +28,24 @@ const jsonLd = {
       Northeast Ohio · Royal Legacy Records
     </p>
     <h1 class="font-display uppercase text-4xl sm:text-5xl lg:text-6xl leading-[0.95] text-ledger-paper mb-6 text-balance">
-      Record. Notebook. Night shift.
+      {featured?.data.title ?? 'Layor76'}
     </h1>
     <p class="text-lg text-steel max-w-[52ch] mb-10">
-      Layor76 — musician on Royal Legacy Records. Also a 1099 gig driver, which is where the
-      tax writing comes from.
+      {featured?.data.type === 'album'
+        ? `${featured.data.tracklist?.length ?? 0} tracks, out now on Royal Legacy Records.`
+        : 'Out now on Royal Legacy Records.'}
     </p>
 
-    <div class="flex flex-col sm:flex-row gap-4">
-      <a
-        href="/music"
-        class="font-mono text-xs uppercase tracking-widest px-6 py-4 bg-sodium-amber text-night-route font-semibold text-center hover:bg-sodium-amber-strong transition-colors no-underline"
-      >
-        Listen to the record
-      </a>
-      <a
-        href="/writing/keep-what-you-earn"
-        class="font-mono text-xs uppercase tracking-widest px-6 py-4 border border-signal-green/50 text-ledger-paper text-center hover:border-sodium-amber hover:text-sodium-amber-strong transition-colors no-underline"
-      >
-        Get the tax book updates
-      </a>
-    </div>
+    {
+      featured && (
+        <a
+          href={`/music/${featured.id}`}
+          class="inline-block font-mono text-xs uppercase tracking-widest px-6 py-4 bg-sodium-amber text-night-route font-semibold text-center hover:bg-sodium-amber-strong transition-colors no-underline"
+        >
+          Listen now
+        </a>
+      )
+    }
   </section>
 
   {

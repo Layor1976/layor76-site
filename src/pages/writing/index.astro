@@ -3,9 +3,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import TripLog from '../../components/TripLog.astro';
 import { getCollection } from 'astro:content';
 
-const books = await getCollection('books', ({ data }) => !data.draft);
-const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+// The tax book (Keep What You Earn) and its articles live on their own
+// small "Tax Guide" nav tab, not here — this page is Layor76's own
+// creative writing (memoir, poetry, essays), kept separate on purpose.
+const books = (await getCollection('books', ({ data }) => !data.draft)).filter(
+  (book) => book.id !== 'keep-what-you-earn'
 );
 
 const bookEntries = books.map((book, i) => ({
@@ -14,28 +16,17 @@ const bookEntries = books.map((book, i) => ({
   href: `/writing/${book.id}`,
   stat: book.data.status === 'in-progress' ? 'IN PROGRESS' : 'PUBLISHED',
 }));
-
-const postEntries = posts.map((post, i) => ({
-  index: String(i + 1).padStart(2, '0'),
-  title: post.data.title,
-  href: `/writing/articles/${post.id}`,
-  stat: post.data.pubDate.toISOString().slice(0, 10),
-}));
 ---
 
-<BaseLayout title="Writing — Layor76" description="Books and articles from Layor76 — the gig-driver tax playbook and more.">
+<BaseLayout title="Writing — Layor76" description="Books from Layor76 — the memoir, the poetry, the rest.">
   <section class="px-6 py-12 lg:px-16 lg:py-16 max-w-3xl">
     <h1 class="font-display uppercase text-3xl sm:text-4xl text-ledger-paper mb-10">Writing</h1>
 
-    {bookEntries.length > 0 && <TripLog label="Books" entries={bookEntries} />}
-
     {
-      postEntries.length > 0 ? (
-        <TripLog label="Articles" entries={postEntries} />
+      bookEntries.length > 0 ? (
+        <TripLog label="Books" entries={bookEntries} />
       ) : (
-        <p class="font-mono text-xs text-steel mt-8">
-          TODO — no articles published yet. Drop a Markdown file into src/content/posts/ and it appears here automatically.
-        </p>
+        <p class="font-mono text-xs text-steel mt-8">TODO — no books published yet.</p>
       )
     }
   </section>
