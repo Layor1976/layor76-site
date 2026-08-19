@@ -113,10 +113,13 @@ was seen and deliberately left out, not missed.
   4. "The tip deduction most drivers don't know exists" — the 2025 tip-income law
 
   All four use real figures from your own tax research (the recovered ChatGPT source pack in
-  `03A - Book - Keep What You Earn`), not invented numbers. Each still has one small TODO inside
-  it (marked clearly in the file) for a follow-up figure or link you'd need to source and confirm
-  before it's fully done — I didn't remove those markers, so search each file for "TODO" before
-  publishing.
+  `03A - Book - Keep What You Earn`), not invented numbers.
+  - **"The IRS wants its money four times a year"** — TODO resolved (2026-08-19): added the real
+    2026 quarterly due dates and the exact safe-harbor percentages (90% current year / 100% prior
+    year, 110% if prior-year AGI was over $150k), sourced directly from irs.gov/faqs/estimated-tax.
+  - **"What actually counts as a business expense"** — still has one TODO: it wants a real example
+    calculation using your actual phone-bill percentage (or similar real figure). Couldn't fill
+    this in myself without inventing a number — needs your real figure.
 
 - **RSS feed** — live at `/rss.xml`, auto-discovered via `<link rel="alternate">` in the page
   head. Pulls from the same posts collection, nothing to maintain separately.

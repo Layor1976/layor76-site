@@ -38,7 +38,15 @@ That second option — basing this year's payments on *last year's* bill — is 
 should actually use. It doesn't require guessing this year's income at all, just knowing last
 year's number and dividing it by four.
 
-TODO — this article should eventually link out to the exact current safe-harbor percentages and
-due dates once those are sourced from the IRS for the relevant tax year, rather than stating a
-number here that could go stale. Don't publish with a specific percentage hardcoded without
-checking it's current.
+The exact rule: your withholding and estimated payments together need to add up to at least the
+smaller of 90% of what you'll owe this year, or 100% of what you owed last year. If your prior
+year's adjusted gross income was over $150,000 ($75,000 if married filing separately), that second
+number moves up to 110%. Either safe-harbor threshold only applies if last year's return covered a
+full 12 months.
+
+For 2026, the four due dates are April 15, June 15, September 15, and January 15, 2027 — each
+covering the income earned in the quarter before it. (If any of those lands on a weekend or legal
+holiday, it pushes to the next business day.) These are set by the IRS and don't change year to
+year except for the calendar shifting, so it's worth a quick check at
+[irs.gov/faqs/estimated-tax](https://www.irs.gov/faqs/estimated-tax) before each payment if you
+want to confirm nothing's moved.
