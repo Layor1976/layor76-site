@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import tattoo from '../assets/images/tattoo-forearm.jpg';
+import tattooChain from '../assets/images/tattoo-cross-chain.jpg';
 ---
 
 <BaseLayout title="About — Layor76" description="Layor76 — gig driver who writes and records, Northeast Ohio.">
@@ -26,8 +29,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <em class="not-italic">"I am not what broke me"</em> isn't a line he borrowed from
         anywhere — it's the whole idea, worn where he sees it every day.
       </p>
-      <p class="font-mono text-xs text-steel">TODO — swap in the real tattoo photo once it's
-      sent over; text above is accurate but the page should show it, not just describe it.</p>
+      <p>
+        Same arm, on the hand: a cross and a broken chain. Breaking the cycle.
+      </p>
+    </div>
+    <div class="mt-6 flex flex-wrap gap-6">
+      <div class="w-full max-w-xs border border-ledger-paper-dim/25 bg-dash-panel">
+        <Image
+          src={tattoo}
+          alt="Andrew's left-forearm tattoo — a figure split between blue/ice and red/fire, wrapped by a film-strip band at the wrist"
+          width={800}
+          height={1067}
+          class="w-full h-auto"
+        />
+      </div>
+      <div class="w-full max-w-xs border border-ledger-paper-dim/25 bg-dash-panel">
+        <Image
+          src={tattooChain}
+          alt="Andrew's left-hand tattoo — a cross with a broken chain, representing breaking the cycle"
+          width={800}
+          height={600}
+          class="w-full h-auto"
+        />
+      </div>
     </div>
   </section>
 </BaseLayout>

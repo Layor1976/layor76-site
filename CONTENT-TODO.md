@@ -159,8 +159,10 @@ was seen and deliberately left out, not missed.
     ChatGPT "symbolism analysis" conversation in your archive, which is worth knowing about: it's
     just the AI guessing at a photo, and its own two passes contradicted each other (one called it
     a raven, the other a skull) — I didn't use any of that.
-  - **Still need the actual tattoo photo** — the Drive link you sent turned out to be a Spotify
-    app screenshot, not the tattoo. Text is accurate and live; add the real photo when you can.
+  - **Both real tattoo photos are now on the page** — the fire/ice forearm piece
+    (`tattoo-forearm.jpg`) and the cross-and-broken-chain hand piece (`tattoo-cross-chain.jpg`,
+    meaning confirmed by you: breaking the cycle). Sourced from your real camera-roll photos, not
+    the earlier Spotify screenshot mix-up.
 
 ## Scaffolded, not live
 
