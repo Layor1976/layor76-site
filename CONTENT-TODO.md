@@ -22,7 +22,10 @@ was seen and deliberately left out, not missed.
 ## Blocks launch — do these first
 
 - **Site facts** (`src/lib/site.ts`)
-  - `CONTACT_EMAIL` — still `TODO@layor76.com`, needs a real address.
+  - `CONTACT_EMAIL` — **done, real now**: `hello@layor76.com`, on real Google Workspace mail
+    (2026-08-19). Primary login is `rise@layor76.com`; aliases `sales@`, `next@`, `hello@`, and
+    `contact@layor76.com` all deliver there too — add/remove more anytime in the Admin Console
+    under Users → Andrew Royal → Alternate email addresses.
   - `LINKS` — Spotify, Apple Music, YouTube Music, YouTube, Amazon Music, Deezer, and now
     **iHeartRadio** and **TikTok** (`@layor1976`) are **real, verified links**. SoundCloud,
     Tidal, Pandora, and Audiomack were checked — no presence on any of them yet. Napster's

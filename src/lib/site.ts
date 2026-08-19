@@ -8,8 +8,7 @@ export const SITE = {
   url: 'https://layor76.com',
 };
 
-// TODO: replace with real contact email
-export const CONTACT_EMAIL = 'TODO@layor76.com';
+export const CONTACT_EMAIL = 'hello@layor76.com';
 
 // TODO: paste real links, or leave as null to hide the item from the UI.
 export const LINKS = {
