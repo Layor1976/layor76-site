@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import { SITE } from '../lib/site';
+import heroImage from '../assets/images/hero-cinematic.jpg';
 
 const releases = await getCollection('releases', ({ data }) => !data.draft);
 const featured = releases.find((r) => r.data.featured) ?? releases[0];
@@ -43,22 +45,14 @@ const jsonLd = {
       </a>
     </div>
 
-    {
-      /* TODO — cinematic hero photo not added yet. Andrew's spec: shot from
-         behind, face unseen, dark industrial/night Northeast Ohio scene, wet
-         pavement, distant red/orange light through smoke, battered notebook
-         in hand, headphones/studio imagery worked in subtly. No mic pose, no
-         album cover, no AI-fantasy look. Wide cinematic format, made
-         specifically for this spot — not a reused square cover. Once the
-         file exists at src/assets/images/hero-cinematic.jpg, import it with
-         astro:assets Image and swap in for this placeholder. */
-    }
-    <div class="hidden lg:block lg:w-[45%] relative bg-dash-panel border-l border-signal-green/25">
-      <div class="absolute inset-0 flex items-center justify-center">
-        <span class="font-mono text-xs text-steel px-8 text-center">
-          TODO — cinematic hero photo
-        </span>
-      </div>
+    <div class="hidden lg:block lg:w-[45%] relative border-l border-signal-green/25 overflow-hidden">
+      <Image
+        src={heroImage}
+        alt="Layor76 seen from behind, seated at a desk in a dark room, notebook open, city skyline through the window at night"
+        width={900}
+        height={1000}
+        class="w-full h-full object-cover"
+      />
     </div>
   </section>
 
